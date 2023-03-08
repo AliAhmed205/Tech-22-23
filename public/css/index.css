@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+SC&family=Playfair+Display+SC&display=swap');
+
+body {
+    cursor: url(http://www.rw-designer.com/cursor-extern.php?id=47879);
+}
+
+
+.theme-preset span:first-of-type {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+#add-theme-button {
+    margin-top: 10px;
+}
+
+img {
+    width: 15%;
+}
+
+h1 {
+    font-family: 'Playfair Display SC', serif;
+}
+
+form {
+    display: grid;
+    width: 10%;
+}
+
+#background-color-input {
+    width: 300px;
+    height: 300px;
+}
+
+label {
+    font-family: 'Alegreya SC', serif;
+}
+
+input {
+    margin-bottom: 2em;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 10px 12px;
+    cursor: pointer;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.custom-file-upload:hover {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 10px 12px;
+    cursor: pointer;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    text-align: center;
+    color: white;
+}

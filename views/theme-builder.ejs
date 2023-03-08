@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Theme Builder</title>
+  <link rel="stylesheet" href="/css/index.css">
+  
+</head>
+<body>
+    <img src="./public/img/hexside-main-logo.png" />
+    <h1>Theme Builder</h1>
+  <form id="theme-builder-form" method="POST" action="/api/theme-builder" enctype="multipart/form-data">
+    <label for="name-input">Coven Name:</label>
+    <input type="text" id="name-input" name="name" required>
+
+    <label for="background-color-input">Coven Representation Color:</label>
+    <input type="color" id="background-color-input" name="backgroundColor" required>
+
+    <label for="font-select">Font:</label>
+    <select id="font-select" name="fontFamily" required>
+      <option value="Arial">Arial</option>
+      <option value="Helvetica">Helvetica</option>
+      <option value="Times New Roman">Times New Roman</option>
+      <option value="Courier New">Courier New</option>
+      <option value="Verdana">Verdana</option>
+      <option value="Georgia">Georgia</option>
+      <option value="Comic Sans MS">Comic Sans MS</option>
+    </select>
+
+    <label for="image-upload-input" class="custom-file-upload">+ Upload Coven Crest</label>
+    <input type="file"  id="image-upload-input" name="image" accept=".jpg, .jpeg, .png">
+
+    <button type="submit">Save Theme</button>
+  </form>
+  <h2>Saved Themes</h2>
+<ul id="theme-presets-list">
+
+
+
+
