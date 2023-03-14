@@ -1,53 +1,133 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Alegreya+SC&family=Playfair+Display+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+SC&family=Alegreya:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
 
 body {
-    cursor: url(http://www.rw-designer.com/cursor-extern.php?id=47879);
+    margin: 0;
 }
 
-
-.theme-preset span:first-of-type {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
+section {
+    display: flex;
 }
 
-#add-theme-button {
-    margin-top: 10px;
-}
-
-img {
+section section:first-of-type {
+    flex-direction: column;
+    background-color: #281A3B;
+    height: 785px;
     width: 15%;
+    padding: 10px;
+    border-right: 8px solid;
+    border-left: 8px solid;
+    border-image: linear-gradient(to bottom, #dca264, #bd9677, #f1d9a5, #ecb266, #ffeb8b, #ffdc7d, #ffdc7d) 1;
 }
 
-h1 {
+section section:first-of-type img {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+section section:first-of-type ul { 
+    list-style-type: none;
+    color: white;
+    text-align: center;
+    padding: 0;
+}
+
+section section:first-of-type h1 { 
+    color: white;
+    text-align: center;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+section section:first-of-type li { 
+  margin-bottom: 1em;
+  text-transform: capitalize;
+  font-family: 'Alegreya SC', serif;
+
+}
+
+section section:first-of-type li:first-of-type { 
+   font-weight: 900;
+  }
+
+
+
+section section:nth-of-type(2) {
+    flex-direction: column;
+    background: radial-gradient(#290808, #5e0000);
+    width: 15%;
+    overflow: hidden;
+    max-height: 100dvh;
+
+}
+
+section section:nth-of-type(2) a {
+    background-color: transparent;
+    border: none;
+    color: white;
+    transition: 0.5s;
+    border-bottom: white 1px solid;
     font-family: 'Playfair Display SC', serif;
+    font-weight: 700;
+    padding: 1em;
+
+}
+section section:nth-of-type(2) div {
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    height: 60%;
+    width: 100%;
+}
+
+section section:nth-of-type(2) div button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    transition: 0.5s;
+    border-bottom: white 1px solid;
+    font-family: 'Playfair Display SC', serif;
+    font-weight: 700;
+    padding: 1em;
+}
+
+section section:nth-of-type(2) a:nth-of-type(1):hover {
+    background-color: #120418;
+    color: #d289ff;
+    transition: 0.5s;
+    font-size: 1em;
+}
+
+section section:nth-of-type(2) a:nth-of-type(2):hover {
+    background-color: #120418;
+    color: #d289ff;
+    transition: 0.5s;
+    font-size: 1em;
 }
 
 form {
-    display: grid;
-    width: 10%;
+    width: 24%;
+    margin-left: 1em;
+    margin-right: 0em;
 }
 
-#background-color-input {
-    width: 300px;
-    height: 300px;
+form img { 
+    width: 80%;
 }
 
 label {
+    display: flex;
+    flex-direction: column;
     font-family: 'Alegreya SC', serif;
-}
+    font-weight: 700;
 
-input {
-    margin-bottom: 2em;
 }
 
 input[type="file"] {
     display: none;
 }
 
-.custom-file-upload {
+label:nth-of-type(6) {
     border: 1px solid #ccc;
     display: inline-block;
     padding: 10px 12px;
@@ -55,9 +135,11 @@ input[type="file"] {
     margin-top: 1em;
     margin-bottom: 1em;
     text-align: center;
+    transition: 0.5s;
+    width: 61%;
 }
 
-.custom-file-upload:hover {
+label:nth-of-type(6):hover {
     border: 1px solid #ccc;
     display: inline-block;
     padding: 10px 12px;
@@ -66,4 +148,81 @@ input[type="file"] {
     margin-bottom: 1em;
     text-align: center;
     color: white;
+    transition: 0.5s;
+    background-color: rgb(25, 23, 51);
 }
+
+form input:last-of-type { 
+    padding: 1.5em;
+    color: white;
+    background-color: #281A3B;
+    border: none;
+    width: 66.6%;
+    font-family: 'Playfair Display SC', serif;
+    font-weight: 500;
+
+}
+
+form input:nth-of-type(3) {
+        width: 300px;
+        height: 300px;
+    }
+
+section section:nth-of-type(3)  { 
+    display: inline-block;
+
+}
+
+section section:nth-of-type(3) section { 
+    background-color: white;
+    border-right: 1px  solid;
+    border-top: 1px  solid;
+    border-bottom: 1px  solid;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.059);
+    width: 500px;
+    height: 615px;
+}
+
+section section:nth-of-type(3) h2 {
+    text-align: center;
+    font-family: 'Alegreya SC', serif;
+
+}
+
+section section:nth-of-type(3) h3 {
+    text-align: center;
+    font-family: 'Alegreya SC', serif;
+
+}
+
+section section:nth-of-type(3) img {
+    width: 50%;
+    margin: 0 auto 0 auto;
+}
+
+section section:nth-of-type(3) p {
+    padding:0 1em 0 1em;
+    text-align: center;
+    font-family: 'Alegreya SC', serif;
+    font-size: 13px;
+
+}
+
+img {
+    transition: 1s ease-out;
+  }
+  
+  .leftmainsection, .rightmainsection {
+    transition: background-color 1s ease-out;
+  }
+  
+  .leftmainsection {
+    background-color: white;
+  }
+  
+  .rightmainsection {
+    background-color: white;
+  }
+
+
+

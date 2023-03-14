@@ -1,40 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Theme Builder</title>
-  <link rel="stylesheet" href="/css/index.css">
-  
-</head>
+
+  <%- include ('head.ejs') %>
+
 <body>
-    <img src="./public/img/hexside-main-logo.png" />
-    <h1>Theme Builder</h1>
-  <form id="theme-builder-form" method="POST" action="/api/theme-builder" enctype="multipart/form-data">
-    <label for="name-input">Coven Name:</label>
-    <input type="text" id="name-input" name="name" required>
+  <main>
+    <section>
+      <section class="leftmainsection">
+        <img src="/img/hexside-main-logo.png" alt="Hexside Symbol Logo">
+        <img src="/img/hexside-logo.png" alt="Hexside Title Card">
+        <h1>Welcome, <b>Admin</b></h1>
+        <ul>
+          <li>Coven Theme Builder</li>
+          <li>Settings</li>
+          <li>Servers</li>
+          <li>Log</li>
+          <li>Magic Curriculum</li>
 
-    <label for="background-color-input">Coven Representation Color:</label>
-    <input type="color" id="background-color-input" name="backgroundColor" required>
+        </ul>
+      </section>
+      <section>
+        <a onclick="location.href='/';">Reset to Default</a>
+        <a onclick="location.href='/';">+ Add New Theme</a>
+        <% themes.forEach(function(theme){ %>
+          <a href="/themes/<%= theme._id %>" style=" font-size: 13px; text-decoration:none; text-align: center; display:flex; background-color: <%= theme.backgroundColor %>">
+              <img src="../uploads/<%= theme.images %>" loading="lazy" alt="<%= theme.name %> thumbnail" width="40" height="40">
+            <span style="margin: 10px 10px;"><%= theme.name %></span>
+          </a>          
+        <% }); %>
+      </section>
 
-    <label for="font-select">Font:</label>
-    <select id="font-select" name="fontFamily" required>
-      <option value="Arial">Arial</option>
-      <option value="Helvetica">Helvetica</option>
-      <option value="Times New Roman">Times New Roman</option>
-      <option value="Courier New">Courier New</option>
-      <option value="Verdana">Verdana</option>
-      <option value="Georgia">Georgia</option>
-      <option value="Comic Sans MS">Comic Sans MS</option>
-    </select>
-
-    <label for="image-upload-input" class="custom-file-upload">+ Upload Coven Crest</label>
-    <input type="file"  id="image-upload-input" name="image" accept=".jpg, .jpeg, .png">
-
-    <button type="submit">Save Theme</button>
-  </form>
-  <h2>Saved Themes</h2>
-<ul id="theme-presets-list">
-
-
+      <%- include ('form.ejs') %>
 
 
+      <section>
+        <h2>Template Example</h2>
+        <section class="rightmainsection">
+          <h3 class="welcomefont">Welcome to Hexside Magical School!</h3>
+          <img src="./img/hexside-main-logo.png">
+          <p class="textfont">Lorem ipsum </p>
+        </section>
+      </section>
+    </section>
+  </main>
+  <footer> 
+  </footer>
+  <script>
+    
+  </script>
+</body>
+</html>
