@@ -1,20 +1,12 @@
 const express = require('express');
-<<<<<<< HEAD
 const { v4: uuidv4 } = require('uuid');
 require('dotenv').config({path: '.env'});
-=======
-require('dotenv').config({path: '.env'})
->>>>>>> 10918e04e0929b18dced06e30c92fc19873707b3
 const bodyParser = require('body-parser');
 const ejs = require('ejs');
 const app = express();
 const multer = require('multer');
-<<<<<<< HEAD
 const upload = multer({ dest: 'public/uploads/' });
 const { MongoClient, ObjectId } = require('mongodb');
-=======
-const { MongoClient } = require('mongodb');
->>>>>>> 10918e04e0929b18dced06e30c92fc19873707b3
 
 // Set up middleware
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -22,19 +14,6 @@ app.use(bodyParser.json());
 app.set('view engine', 'ejs');
 app.use('/public/', express.static('./public'));
 app.use(express.static(__dirname + '/public'));
-
-// Multer configuration
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, 'public/uploads')
-  },
-  filename: function (req, file, cb) {
-    const timestamp = new Date().getTime();
-    cb(null, timestamp + '-' + file.originalname);
-  }
-});
-
-const upload = multer({ storage: storage });
 
 // In-memory store for themes
 let themes = [];
@@ -53,7 +32,6 @@ async function connectToDatabase() {
   } catch (err) {
     console.error(err);
     process.exit(1);
-<<<<<<< HEAD
   }
 }
 
@@ -98,42 +76,6 @@ app.post('/submit-form', upload.single('image'), async (req, res) => {
   } catch (err) {
     res.status(500).send({ error: 'Failed to save theme' });
   }
-=======
-  }
-}
-
-// Insert a new theme into the database
-async function insertTheme(theme) {
-  try {
-    const result = await collection.insertOne(theme);
-    console.log('Theme saved to database:', theme);
-    return result;
-  } catch (err) {
-    console.log(err);
-    console.error(err); // Add this line
-    throw err;
-  }
-}
-
-
-app.post('/submit-form', upload.any(), async (req, res) => {
-  console.log('Your coven theme has been uploaded, huzzah!')
-  const { body, files } = req;
-  const theme = {
-    name: body.name,
-    backgroundColor: body.color,
-    fontFamily: body.font,
-    textColor: body['font-color'],
-    images: files.map(file => file.filename)
-  };
-  
-  try {
-    await insertTheme(theme); // insert theme into database
-    res.redirect('/');
-  } catch (err) {
-    res.status(500).send({ error: 'Failed to save theme' });
-  }
->>>>>>> 10918e04e0929b18dced06e30c92fc19873707b3
 });
 
 app.get('/', async (req, res) => {
@@ -150,7 +92,6 @@ app.get('/', async (req, res) => {
   }
 });
 
-<<<<<<< HEAD
 app.get('/themes/:themeID', async (req, res) => {
   try {
     if (!collection) {
@@ -192,23 +133,16 @@ app.delete('/themes/:themeID', async (req, res) => {
 
 
 
-=======
-connectToDatabase();
->>>>>>> 10918e04e0929b18dced06e30c92fc19873707b3
 
 app.get('/form', (req, res) => {
   res.render('form.ejs');
 });
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 10918e04e0929b18dced06e30c92fc19873707b3
 app.post('/submit', (req, res) => {
   const name = req.body.test;
   res.send(`Name: ${name}`);
 });
-<<<<<<< HEAD
 
 
 // Start the server
@@ -216,11 +150,4 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
   console.error();
-=======
-
-// Start the server
-const PORT = process.env.PORT || 1200;
-app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`);
->>>>>>> 10918e04e0929b18dced06e30c92fc19873707b3
 });

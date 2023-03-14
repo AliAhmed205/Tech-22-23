@@ -16,21 +16,6 @@
           <li>Servers</li>
           <li>Log</li>
           <li>Magic Curriculum</li>
-<<<<<<< HEAD
-=======
-
-        </ul>
-      </section>
-      <section>
-        <button>Reset to default</button>
-        <button>+ Add New Theme</button>
-        <% themes.forEach(function(theme){ %>
-          <button><%= theme.name %></button>
-        <% }); %>
-      </section>
-
-      <%- include ('form.ejs') %>
->>>>>>> 10918e04e0929b18dced06e30c92fc19873707b3
 
         </ul>
       </section>
@@ -45,7 +30,6 @@
         <% }); %>
       </section>
 
-<<<<<<< HEAD
       <%- include ('form.ejs') %>
 
 
@@ -65,102 +49,4 @@
     
   </script>
 </body>
-=======
-      <section>
-        <h2>Template Example</h2>
-        <section class="rightmainsection">
-          <h3 class="welcomefont">Welcome to Hexside Magical School!</h3>
-          <img src="./img/hexside-main-logo.png">
-          <p class="textfont">Lorem ipsum </p>
-        </section>
-      </section>
-    </section>
-  </main>
-  <footer> 
-  </footer>
-
-
-  <script>
-const form = document.querySelector('form');
-const submitButton = form.querySelector('button[type="submit"]');
-const nameInput = form.querySelector('input[name="name"]');
-const colorInput = form.querySelector('input[name="color"]');
-const fontSelect = form.querySelector('select[name="font"]');
-const fontColorInput = form.querySelector('input[name="font-color"]');
-const imageInput = form.querySelector('input[name="image"]');
-const colorSelector = document.querySelector('.color-selector');
-const themeThumbnail = document.querySelector('.theme-thumbnail');
-const themeExampleSection = document.querySelector('section:nth-of-type(3)');
-const themeSections = document.querySelectorAll('.theme-section');
-const left = document.querySelector('.leftmainsection');
-const right = document.querySelector('.rightmainsection');
-const p = document.querySelector('.welcomefont');
-const h3 = document.querySelector('.textfont')
-const defaultValues = {};
-
-// Get default values
-window.addEventListener('load', () => {
-  defaultValues.background = document.body.style.backgroundColor;
-  defaultValues.color = document.body.style.color;
-  defaultValues.font = document.body.style.fontFamily;
-});
-
-form.addEventListener('submit', (event) => {
-  event.preventDefault();
-
-  const formData = new FormData(form);
-
-  const name = formData.get('name');
-  const color = formData.get('color');
-  const font = formData.get('font');
-  const fontColor = formData.get('font-color');
-  const image = formData.get('image');
-
-  // Create a new theme element
-  const themeElement = document.createElement('button');
-  const thumbnail = document.createElement('img');
-  thumbnail.src = URL.createObjectURL(image);
-  thumbnail.width = 20; // Set the width of the thumbnail here
-  const nameText = document.createTextNode(name);
-  themeElement.appendChild(thumbnail);
-  themeElement.appendChild(nameText);
-  themeElement.style.background = color;
-  themeElement.classList.add('theme');
-  const themesSection = document.querySelector('section:nth-of-type(2)');
-  themesSection.insertBefore(themeElement, themesSection.lastChild.previousSibling);
-  
-  console.log('Your coven theme has been uploaded, huzzah!');
-
-  // Update images with the uploaded image, except for exceptions
-  const exceptionSelectors = [
-    'section section:first-of-type img:nth-of-type(2)',
-    'form img',
-    'section section:nth-of-type(2) img',
-  ];
-  const images = Array.from(document.querySelectorAll('img:not(' + exceptionSelectors.join(', ') + ')'));
-  images.forEach((img) => {
-    img.src = thumbnail.src;
-  });
-
-  // Update background colors
-  const backgroundColor = color;
-  const textColor = fontColor;
-  themeExampleSection.style.color = textColor;
-  themeExampleSection.style.fontFamily = font;
-
-  left.style.backgroundColor = backgroundColor;
-  right.style.background = color;
-  p.style.fontFamily = font;
-  h3.style.fontFamily = font;
-
-  themeSections.forEach((el) => {
-    el.style.transition = 'background-color 2s';
-    el.style.backgroundColor = backgroundColor;
-  });
-});
-
-  </script>
-</body>
-
->>>>>>> 10918e04e0929b18dced06e30c92fc19873707b3
 </html>

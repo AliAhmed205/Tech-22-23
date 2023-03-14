@@ -61,11 +61,7 @@ section section:nth-of-type(2) {
 
 }
 
-<<<<<<< HEAD
 section section:nth-of-type(2) a {
-=======
-section section:nth-of-type(2) button {
->>>>>>> 10918e04e0929b18dced06e30c92fc19873707b3
     background-color: transparent;
     border: none;
     color: white;
@@ -95,7 +91,6 @@ section section:nth-of-type(2) div button {
     padding: 1em;
 }
 
-<<<<<<< HEAD
 section section:nth-of-type(2) a:nth-of-type(1):hover {
     background-color: #120418;
     color: #d289ff;
@@ -104,9 +99,6 @@ section section:nth-of-type(2) a:nth-of-type(1):hover {
 }
 
 section section:nth-of-type(2) a:nth-of-type(2):hover {
-=======
-section section:nth-of-type(2) button:hover {
->>>>>>> 10918e04e0929b18dced06e30c92fc19873707b3
     background-color: #120418;
     color: #d289ff;
     transition: 0.5s;
@@ -135,11 +127,7 @@ input[type="file"] {
     display: none;
 }
 
-<<<<<<< HEAD
 label:nth-of-type(6) {
-=======
-label:nth-of-type(5) {
->>>>>>> 10918e04e0929b18dced06e30c92fc19873707b3
     border: 1px solid #ccc;
     display: inline-block;
     padding: 10px 12px;
@@ -151,11 +139,7 @@ label:nth-of-type(5) {
     width: 61%;
 }
 
-<<<<<<< HEAD
 label:nth-of-type(6):hover {
-=======
-label:nth-of-type(5):hover {
->>>>>>> 10918e04e0929b18dced06e30c92fc19873707b3
     border: 1px solid #ccc;
     display: inline-block;
     padding: 10px 12px;
@@ -179,11 +163,7 @@ form input:last-of-type {
 
 }
 
-<<<<<<< HEAD
 form input:nth-of-type(3) {
-=======
-form input:nth-of-type(2) {
->>>>>>> 10918e04e0929b18dced06e30c92fc19873707b3
         width: 300px;
         height: 300px;
     }
