@@ -7,16 +7,26 @@ const app = express();
 const multer = require('multer');
 const upload = multer({ dest: 'public/uploads/' });
 const { MongoClient, ObjectId } = require('mongodb');
+const methodOverride = require('method-override');
+const fetch = require('node-fetch');
+
 
 // Set up middleware
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.set('view engine', 'ejs');
 app.use('/public/', express.static('./public'));
 app.use(express.static(__dirname + '/public'));
+app.use(methodOverride('_method'));
 
 // In-memory store for themes
 let themes = [];
+
+themes.forEach(theme => {
+  console.log(theme);
+});
+
 
 let collection;
 
@@ -49,6 +59,8 @@ async function insertTheme(theme) {
     throw err;
   }
 }
+
+
 
 app.post('/submit-form', upload.single('image'), async (req, res) => {
   console.log('Your coven theme has been uploaded, huzzah!')
@@ -98,19 +110,24 @@ app.get('/themes/:themeID', async (req, res) => {
       return res.status(500).send('Unable to connect to database');
     }
 
+    const response = await fetch('https://opensheet.elk.sh/1er1dtNi_p5eKmqi70bGZLywuDzyce32JqzrywE57gU8/Blad1')
+    const quotes = await response.json();
+    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)].texts;
+
     const id = req.params.themeID;
     const theme = await collection.findOne({ _id: new ObjectId(id) });
-    if (!theme) {
-      return res.status(404).send('Theme not found');
-    }
 
-    const renderData = await collection.find({}).toArray(); // hier is een aanpassing gemaakt
-    res.render('theme-builder2', { theme, themes: renderData }); // hier is een aanpassing gemaakt
+    // fetch all themes from the database and populate `themes` with the results
+    const allThemes = await collection.find({}).toArray();
+    themes = allThemes;
+
+    res.render('theme-builder2', { themes, theme, randomQuote });
   } catch (err) {
     console.error(err);
     res.status(500).send('Failed to retrieve theme');
   }
 });
+
 
 app.delete('/themes/:themeID', async (req, res) => {
   try {
@@ -131,6 +148,10 @@ app.delete('/themes/:themeID', async (req, res) => {
   }
 });
 
+app.get('/themes/:id', async (req, res) => {
+  const theme = await collection.findOne({ _id: ObjectId(req.params.id) });
+  res.render('theme-builder2', { theme, themes });
+});
 
 
 

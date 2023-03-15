@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <%- include ('head.ejs') %>
+<%- include ('head.ejs') %>
 
 <body>
   <main>
@@ -23,30 +23,34 @@
         <a onclick="location.href='/';">Reset to Default</a>
         <a onclick="location.href='/';">+ Add New Theme</a>
         <% themes.forEach(function(theme){ %>
-          <a href="/themes/<%= theme._id %>" style=" font-size: 13px; text-decoration:none; text-align: center; display:flex; background-color: <%= theme.backgroundColor %>">
-              <img src="../uploads/<%= theme.images %>" loading="lazy" alt="<%= theme.name %> thumbnail" width="40" height="40">
-            <span style="margin: 10px 10px;"><%= theme.name %></span>
-          </a>          
+        <a href="/themes/<%= theme._id %>"
+          style=" font-size: 13px; text-decoration:none; text-align: center; display:flex; background-color: <%= theme.backgroundColor %>">
+          <img src="../uploads/<%= theme.images %>" loading="lazy" alt="<%= theme.name %> thumbnail" width="40"
+            height="40">
+          <span style="margin: 10px 10px;"><%= theme.name %></span>
+        </a>
         <% }); %>
       </section>
 
       <%- include ('form.ejs') %>
-
-
+  
       <section>
         <h2>Template Example</h2>
         <section class="rightmainsection">
           <h3 class="welcomefont">Welcome to Hexside Magical School!</h3>
           <img src="./img/hexside-main-logo.png">
-          <p class="textfont">Lorem ipsum </p>
+          <p class="textfont">Are you a young witch or other magical being looking to hone your skills and unleash your
+            full potential? Look no further than Hexside, the premier school for magic on The Boiling Isles!
+            <br><br></p>
         </section>
       </section>
     </section>
+
+
   </main>
-  <footer> 
+  <footer>
   </footer>
-  <script>
-    
-  </script>
+
 </body>
+
 </html>

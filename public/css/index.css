@@ -11,8 +11,8 @@ section {
 section section:first-of-type {
     flex-direction: column;
     background-color: #281A3B;
-    height: 785px;
-    width: 15%;
+    height: 764px;
+    width   : 15%;
     padding: 10px;
     border-right: 8px solid;
     border-left: 8px solid;
@@ -31,6 +31,7 @@ section section:first-of-type ul {
     text-align: center;
     padding: 0;
 }
+
 
 section section:first-of-type h1 { 
     color: white;
@@ -57,7 +58,7 @@ section section:nth-of-type(2) {
     background: radial-gradient(#290808, #5e0000);
     width: 15%;
     overflow: hidden;
-    max-height: 100dvh;
+    height: 785px;
 
 }
 
@@ -106,14 +107,60 @@ section section:nth-of-type(2) a:nth-of-type(2):hover {
 }
 
 form {
+    margin-top: 3.5em;
     width: 24%;
-    margin-left: 1em;
+    margin-left: 3em;
     margin-right: 0em;
+}
+
+
+
+.done{
+    margin-top: 4   em;
+    width: 24%;
+    margin-left: 3em;
+    margin-right: 0em;
+}
+
+.done li {
+    list-style-type: none;
+    margin-top: 1em;
+    
+}
+
+.done li:last-of-type {
+    list-style-type: none;
+    margin-top: 1em;
+    margin-bottom: 2em;
+    
+}
+
+.done button { 
+    padding: 1em 3em 1em 3em;
+    border: none;
+    color: red;
+    font-family: 'Alegreya SC', serif;
+    transition: 0.5s;
+    border: 1px solid #ccc;
+
+
+}
+
+.done button:hover { 
+    padding: 1em 3em 1em 3em;
+    border: none;
+    color: white;
+    background-color: red;
+    font-family: 'Alegreya SC', serif;
+    box-shadow: red 0px 10px 50px;
+    transition: 0.5s;
+
 }
 
 form img { 
     width: 80%;
 }
+
 
 label {
     display: flex;
@@ -127,7 +174,7 @@ input[type="file"] {
     display: none;
 }
 
-label:nth-of-type(6) {
+label:nth-of-type(5) {
     border: 1px solid #ccc;
     display: inline-block;
     padding: 10px 12px;
@@ -139,7 +186,7 @@ label:nth-of-type(6) {
     width: 61%;
 }
 
-label:nth-of-type(6):hover {
+label:nth-of-type(5):hover {
     border: 1px solid #ccc;
     display: inline-block;
     padding: 10px 12px;
@@ -160,10 +207,37 @@ form input:last-of-type {
     width: 66.6%;
     font-family: 'Playfair Display SC', serif;
     font-weight: 500;
+    
 
 }
 
-form input:nth-of-type(3) {
+form button {
+    width: 68%;
+    padding: 1.5em;
+    background-color: white;
+    color: #281A3B;
+    font-family: 'Playfair Display SC', serif;
+    font-weight: 900;
+    font-size: 1em;
+    transition: 0.5s;
+    border: 1px solid #ccc;
+}
+
+form button:hover {
+    width: 68%;
+    padding: 1.5em;
+    background-color: rgb(208, 0, 208);
+    color: white;
+    font-family: 'Playfair Display SC', serif;
+    font-weight: 900;
+    font-size: 1em;
+    transition: 0.5s;
+    box-shadow: rgb(208, 0, 208) 0px 10px 50px;
+    border: none;
+
+}
+
+form input:nth-of-type(2) {
         width: 300px;
         height: 300px;
     }
@@ -225,4 +299,31 @@ img {
   }
 
 
+  .magic-effect {
+    background-color: white;
+    opacity: 0;
+    animation-name: magic;
+    animation-delay: 1s;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    display: none; /* Hide the page until the animation completes */
+  }
+  
+  @keyframes magic {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 
+
+html { 
+    animation-name: magic;
+    animation-duration: 2s;
+}
+  

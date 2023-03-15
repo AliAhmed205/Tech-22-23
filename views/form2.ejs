@@ -1,23 +1,11 @@
-<form method="POST" action="/themes/<%= theme._id %>?_method=DELETE">
-    <input type="hidden" name="theme-id" value="<%= theme._id %>">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" value="<%= theme.name %>" required>
-    <br> 
-    <label for="color">Background Color:</label>
-    <input type="color" id="color" name="color" value="<%= theme.backgroundColor %>">
-    <br>
-    <label for="font">Font Family:</label>
-    <select id="font" name="font" value="<%= theme.fontFamily %>">
-        <option value="Arial">Arial</option>
-        <option value="Times New Roman">Times New Roman</option>
-        <option value="Verdana">Verdana</option>
-    </select>
-    <br>
-    <label for="font-color">Text Color:</label>
-    <input type="color" id="font-color" name="font-color" value="<%= theme.textColor %>">
-    <br>
-    <label for="image">Image:</label>
-    <input type="file" id="image" name="image">
-    <br>
+<form class="done" action="/themes/<%= theme._id %>?_method=DELETE" method="POST">
+    <li><strong>Theme ID:</strong> <%= theme._id %></li>
+    <li><strong>Name:</strong> <%= theme.name %></li>
+    <li><strong>Background Color:</strong> <%= theme.backgroundColor %></li>
+    <li><strong>Font Family:</strong> <%= theme.fontFamily %></li>
+    <li><strong>Text Color:</strong> <%= theme.textColor %></li>
+    <li><strong>Image:</strong> <%= theme.images %></li>
+    <input type="hidden" name="themeID" value="<%= theme._id %>">
     <button type="submit">Delete Theme</button>
-</form>
+  </form>
+  
