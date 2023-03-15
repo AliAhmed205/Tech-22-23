@@ -22,6 +22,7 @@
     "formidable": "^2.1.1",
     "fs": "^0.0.1-security",
     "googleapis": "^113.0.0",
+    "jslint": "^0.12.1",
     "method-override": "^3.0.0",
     "mongodb": "^5.1.0",
     "mongoose": "^7.0.1",

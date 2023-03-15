@@ -4,6 +4,21 @@ body {
     margin: 0;
 }
 
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    animation-name: magic;
+    animation-duration: .5s;
+    z-index: 9;
+    animation-fill-mode: forwards;
+    pointer-events: none;
+}
+
 section {
     display: flex;
 }
@@ -12,7 +27,7 @@ section section:first-of-type {
     flex-direction: column;
     background-color: #281A3B;
     height: 764px;
-    width   : 15%;
+    width: 15%;
     padding: 10px;
     border-right: 8px solid;
     border-left: 8px solid;
@@ -25,7 +40,7 @@ section section:first-of-type img {
     padding: 0;
 }
 
-section section:first-of-type ul { 
+section section:first-of-type ul {
     list-style-type: none;
     color: white;
     text-align: center;
@@ -33,23 +48,23 @@ section section:first-of-type ul {
 }
 
 
-section section:first-of-type h1 { 
+section section:first-of-type h1 {
     color: white;
     text-align: center;
     padding: 0;
     margin-bottom: 0;
 }
 
-section section:first-of-type li { 
-  margin-bottom: 1em;
-  text-transform: capitalize;
-  font-family: 'Alegreya SC', serif;
+section section:first-of-type li {
+    margin-bottom: 1em;
+    text-transform: capitalize;
+    font-family: 'Alegreya SC', serif;
 
 }
 
-section section:first-of-type li:first-of-type { 
-   font-weight: 900;
-  }
+section section:first-of-type li:first-of-type {
+    font-weight: 900;
+}
 
 
 
@@ -73,6 +88,7 @@ section section:nth-of-type(2) a {
     padding: 1em;
 
 }
+
 section section:nth-of-type(2) div {
     overflow: scroll;
     display: flex;
@@ -115,8 +131,8 @@ form {
 
 
 
-.done{
-    margin-top: 4   em;
+.done {
+    margin-top: 4 em;
     width: 24%;
     margin-left: 3em;
     margin-right: 0em;
@@ -125,17 +141,17 @@ form {
 .done li {
     list-style-type: none;
     margin-top: 1em;
-    
+
 }
 
 .done li:last-of-type {
     list-style-type: none;
     margin-top: 1em;
     margin-bottom: 2em;
-    
+
 }
 
-.done button { 
+.done button {
     padding: 1em 3em 1em 3em;
     border: none;
     color: red;
@@ -146,7 +162,7 @@ form {
 
 }
 
-.done button:hover { 
+.done button:hover {
     padding: 1em 3em 1em 3em;
     border: none;
     color: white;
@@ -157,7 +173,7 @@ form {
 
 }
 
-form img { 
+form img {
     width: 80%;
 }
 
@@ -199,7 +215,7 @@ label:nth-of-type(5):hover {
     background-color: rgb(25, 23, 51);
 }
 
-form input:last-of-type { 
+form input:last-of-type {
     padding: 1.5em;
     color: white;
     background-color: #281A3B;
@@ -207,7 +223,7 @@ form input:last-of-type {
     width: 66.6%;
     font-family: 'Playfair Display SC', serif;
     font-weight: 500;
-    
+
 
 }
 
@@ -238,20 +254,20 @@ form button:hover {
 }
 
 form input:nth-of-type(2) {
-        width: 300px;
-        height: 300px;
-    }
+    width: 300px;
+    height: 300px;
+}
 
-section section:nth-of-type(3)  { 
+section section:nth-of-type(3) {
     display: inline-block;
 
 }
 
-section section:nth-of-type(3) section { 
+section section:nth-of-type(3) section {
     background-color: white;
-    border-right: 1px  solid;
-    border-top: 1px  solid;
-    border-bottom: 1px  solid;
+    border-right: 1px solid;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.059);
     width: 500px;
     height: 615px;
@@ -275,7 +291,7 @@ section section:nth-of-type(3) img {
 }
 
 section section:nth-of-type(3) p {
-    padding:0 1em 0 1em;
+    padding: 0 1em 0 1em;
     text-align: center;
     font-family: 'Alegreya SC', serif;
     font-size: 13px;
@@ -284,46 +300,102 @@ section section:nth-of-type(3) p {
 
 img {
     transition: 1s ease-out;
-  }
-  
-  .leftmainsection, .rightmainsection {
+}
+
+.leftmainsection,
+.rightmainsection {
     transition: background-color 1s ease-out;
-  }
-  
-  .leftmainsection {
+}
+
+.leftmainsection {
     background-color: white;
-  }
-  
-  .rightmainsection {
+}
+
+.rightmainsection {
     background-color: white;
-  }
+}
 
 
-  .magic-effect {
+.magic-effect {
     background-color: white;
     opacity: 0;
     animation-name: magic;
     animation-delay: 1s;
     animation-duration: 2s;
-    animation-fill-mode: forwards;
-    display: none; /* Hide the page until the animation completes */
+    display: none;
+    /* Hide the page until the animation completes */
+}
+
+@keyframes magic {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.error-body {
+    background-color: #000000;
+}
+
+.h1-404 {
+    font-size: 6rem;
+    font-weight: bold text-stroke 2px white;
+    color: rgb(255, 255, 255);
+    font-size: 2000%;
+    margin: 0;
+    text-align: center;
+    margin-top: 0.5em;
+    text-shadow: 0 0 50px rgb(109, 28, 180);
   }
   
-  @keyframes magic {
+  .h1-404 span {
+    display: inline-block;
+    animation: float 1s ease-out forwards;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+  
+  .h1-404 span:nth-child(1) {
+    animation-duration: 0.8s;
+  }
+  
+  .h1-404 span:nth-child(2) {
+    animation-duration: 0.6s;
+  }
+  
+  .h1-404span:nth-child(3) {
+    animation-duration: 0.7s;
+  }
+  
+  @keyframes float {
     0% {
-      opacity: 1;
+      transform: translateY(0) rotate(0);
     }
     50% {
-      opacity: 0;
+      transform: translateY(-20px) rotate(10deg);
     }
     100% {
-      opacity: 1;
+      transform: translateY(0) rotate(-10deg);
     }
   }
 
 
-html { 
-    animation-name: magic;
-    animation-duration: 2s;
+.text-404 {
+    color: white;
+    text-align: center;
 }
-  
+
+.text-404 {
+    text-shadow: 0 0 10px 4px rgb(109, 28, 180);
+}
+
+.error-body img { 
+    width: 5%;
+    margin-left: 44em;
+}
