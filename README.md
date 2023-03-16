@@ -71,3 +71,8 @@ Wanneer je de applicatie opent, zie je een dashboard waarin je verschillende opt
 <br>
 <br>
 
+<img src="https://user-images.githubusercontent.com/118130116/225593324-0c56f9c7-2b96-49d6-8b5f-56816fb6963b.png" alt="License" width="10%"> 
+<a href="https://github.com/AliAhmed205/Tech-22-23/blob/main/LICENSE">MIT License</a> 
+
+<br>
+
