@@ -20,6 +20,7 @@ app.use('/public/', express.static('./public'));
 app.use(express.static(__dirname + '/public'));
 app.use(methodOverride('_method'));
 
+
 // In-memory store for themes
 let themes = [];
 let randomQuote;
@@ -79,17 +80,14 @@ app.post('/submit-form', upload.single('image'), async (req, res) => {
   
   try {
     await insertTheme(theme);
-    try {
       const renderData = await collection.find({}).toArray();
       res.render('theme-builder2', { themes: renderData , theme, randomQuote });
-    } catch (err) {
-      console.error(err);
-      res.status(500).send('Failed to retrieve themes');
-    }
   } catch (err) {
     res.status(500).send({ error: 'Failed to save theme' });
   }
 });
+
+
 
 app.get('/', async (req, res) => {
   if (!collection) {
@@ -128,6 +126,8 @@ app.get('/themes/:themeID', async (req, res) => {
 
 
 
+
+
 app.delete('/themes/:themeID', async (req, res) => {
   try {
     if (!collection) {
@@ -152,6 +152,9 @@ app.get('/themes/:id', async (req, res) => {
   res.render('theme-builder2', { theme, themes });
 });
 
+app.get('*', function(req, res){
+  res.render('404.ejs');
+});
 
 
 app.get('/form', (req, res) => {
@@ -163,6 +166,8 @@ app.post('/submit', (req, res) => {
   const name = req.body.test;
   res.send(`Name: ${name}`);
 });
+
+
 
 
 // Start the server
